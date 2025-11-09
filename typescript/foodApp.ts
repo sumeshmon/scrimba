@@ -1,14 +1,9 @@
 {
-  interface MenuItem {
-    name: string;
-    price: number;
-  }
-  interface Order {
-    id: number;
-    food: string;
-    status: "ordered" | "completed";
-  }
-  const menu: MenuItem[] = [
+type Pizza = {
+    name : string
+    price: number
+}
+  const menu  = [
     { name: "Masala Dosa", price: 8 },
     { name: "Chicken Briyani", price: 10 },
     { name: "Means", price: 10 },
@@ -18,7 +13,7 @@
   let orderQueue: Order[] = [];
   let nextOrderId = 1;
 
-  function addNewFood(foodName:MenuItem) {
+  function addNewFood(foodName) {
     menu.push(foodName);
   }
   function placeOrder(foodName: string): Order | null {
