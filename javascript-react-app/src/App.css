@@ -1,8 +1,7 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 1rem;
+  width: 100%;
 }
 
 .logo {
@@ -11,9 +10,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +23,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -33,10 +35,30 @@
   }
 }
 
-.card {
-  padding: 2em;
+
+header {
+  display: flex;
+  height: 90px;
+  background-color: #21222A;
+  padding: 0 1rem ;
 }
 
-.read-the-docs {
-  color: #888;
+nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.logo-tagline{
+  margin-left: 5px;
+  color: #61DAFB;
+  font-size: 1.5rem;
+}
+body{
+  background-color: #282D35;
+  color: #fff;
+  text-align: left;
+
+}
+main{
+  text-align: left;
 }
