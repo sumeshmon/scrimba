@@ -6,4 +6,6 @@ const character = {
 
 for (let property in character) {
     console.log(property)
+    console.log(character[property]);
+    
 }
