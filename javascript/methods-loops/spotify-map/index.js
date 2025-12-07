@@ -31,8 +31,27 @@ Challenge
 // }
 // playListSection()
 
-const playlistHtml = playlistArr.map(function (playList) {
-    return `
+// const playlistHtml = playlistArr.map(function (playList) {
+//     return `
+//         <section class="card">
+//             <div class="card-start">
+//                 <img src="./images/${playList.albumArt}">
+//             </div>
+//                 <div class="card-mid">
+//                     <h4 class="card-title">${playList.title}</h4>
+//                     <p class="card-artist">${playList.artist}</p>
+//                 </div>
+//             <div class="card-end">
+//                 <p class="card-menu">...</p>
+//             </div>
+//         </section>
+//         `
+// }).join(' ')
+
+const playlistHtml = []
+playlistArr.forEach(playList => {
+    playlistHtml.push(
+        `
         <section class="card">
             <div class="card-start">
                 <img src="./images/${playList.albumArt}">
@@ -45,8 +64,10 @@ const playlistHtml = playlistArr.map(function (playList) {
                 <p class="card-menu">...</p>
             </div>
         </section>
-        `
-})
+        ` 
+    )
+});
+
 
 // for (let i = 0; i < playlistArr.length; i++) {
 //     playlistHtml.push(
@@ -66,4 +87,4 @@ const playlistHtml = playlistArr.map(function (playList) {
 //     )
 // }
 
-document.getElementById('container').innerHTML = playlistHtml
+document.getElementById('container').innerHTML = playlistHtml.join('')
