@@ -9,7 +9,6 @@ Challenge
 
 // const playlistHtml = []
 
-
 // function playListSection() {
 //     return playlistArr.map(function (playList) {        
 //         playlistHtml.push(
