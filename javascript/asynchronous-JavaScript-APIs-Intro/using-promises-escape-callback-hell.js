@@ -28,13 +28,11 @@ try {
     await uploadFile()
     await processFile()
     await notifyUser()
-    
+     console.log('All steps completed!');
 } catch (error) {
     
 }
-finally{
-    console.log('All steps completed!');
-}
+
 
 /* 
 Challenge:
