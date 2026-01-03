@@ -23,3 +23,4 @@ Challenge:
 */
 const bookValues = Object.values(books)
 bookValues.forEach(value => console.log(value.price))
+bookValues.forEach(value => console.log(value.price))

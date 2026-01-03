@@ -15,6 +15,10 @@ const bookEntries = Object.entries(books)
 bookEntries.filter(([id, book]) => book.price > 16)
 .forEach(([id, book]) => console.log(`ID: ${id} Book: ${book.title} £${book.price}`))
 
+// bookEntries.filter( ([key,index])=>{
+//   console.log(index);
+  
+// })
 
 
 /*
