@@ -41,3 +41,10 @@ myMap.forEach((value, key) => {
   console.log(key, value);
 });
 
+# set()
+Set is a built-in JavaScript object that stores unique values. <br>
+
+👉 No duplicates allowed <br>
+👉 Values can be any data type <br>
+👉 Keeps insertion order <br>
+
