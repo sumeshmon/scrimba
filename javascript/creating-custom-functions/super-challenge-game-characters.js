@@ -1,60 +1,68 @@
 class Character {
-/* Base Character Class
-Your task is to design and implement a Character class with properties 'name' (a string), 'health' (a number), and isAlive (a boolean). This class will serve as a foundation for a simple game or simulation where characters can take damage and possibly "die" if their health reaches zero.
+    static count = 0
+    #health = 100
+    constructor(name) {
+        this.name = name
+        Character.incrementCount()
+    }
 
-Class Structure:
-Your class should have:
-- a name property that is set through the constructor.
-- a private health property initialized to 100.
-- a static property count to track how many characters have been created.
+    static incrementCount() {
+        Character.count++
+    }
 
-Static Methods to add:
-- incrementCount() to increase the count each time a new character is instantiated.
-- getCount() to return the current number of characters.
+    static getCount() {
+        return Character.count
+    }
 
-Health Management:
-- Include a getter and a setter for health. The setter should ensure that the health value does not fall below zero.
+    get health() {
+        return this.#health
+    }
 
-Damage Functionality:
-- Implement a method 'takeDamage' which decreases the health value by a specified amount. 
-
-Alive Status:
-- Implement a getter for 'isAlive' that returns a boolean value. A character is considered alive if their health is greater than zero.
-
-Status Report:
-- Implement a method getStatus() that returns a string stating the character's name, 
-  current health, and whether they are alive or dead.
-*/
-}
-
-class Hero {
-/* The Hero class
-The Hero class should inherit from Character. This new class should include additional functionality to manage an inventory of items that the hero can collect during gameplay.
-
-Constructor:
-- The constructor for the Hero class should initialize the hero with a name and an empty inventory for items.
-
-Inventory Management:
-- Implement a method pickUpItem that allows the hero to add items to their inventory.
-- Items should simply be added to an array.
-
-Item Retrieval:
-- Implement a method getItems that returns a string listing all the items in the hero's inventory.
-*/
+    set health(value) {
+        this.#health = value < 0 ? 0 : value
+    }
+    takeDamage(amount) {
+        return this.health -= amount
+    }
+    get isAlive() {
+        return this.#health > 0
+    }
  
+    getStatus() {
+        return `${this.name} has ${this.health} health and is ${this.isAlive ? 'alive' : 'dead'}`
+    }
+
+
 }
 
-class Villain  {
-/* The Villain class
-The Villain class should inherit from Character. This new class should include additional functionality to allow the villain to issue a threat.
 
-Constructor:
-- The constructor for the Villain class should initialize the villain with a name and a threat.
+class Hero extends Character{
+    constructor (name){
+        super(name)
+        this.inventory = []
+    }
+    pickUpItem(item){
+        this.inventory.push(item)
+    }
+    getItems() {
+        if (this.inventory.length === 0) {
+            return `${this.name} has no items`
+        }
+        return `${this.name}'s items: ${this.inventory.join(', ')}`
+    }
 
-Threat
-- The getThreat method should simply return the threat.
-*/
 }
+
+class Villain extends Character{
+    constructor(name, threat){
+        super(name)
+        this.threat = threat
+    }
+    getThreat() {
+        return this.threat
+    }
+}
+
 
 // Example Usage
 const merlin = new Hero("Merlin")
