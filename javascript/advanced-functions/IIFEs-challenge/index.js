@@ -6,6 +6,11 @@
 
 (async function (country) {
     const weather = await fetch('./geo.json')
-    const weatherObj = await weather.json()
-    console.log(`The weather in the ${country} today is ${weatherObj[country]}`)    
+    const weatherObj = await weather.json()  
+    const div = document.getElementById('waether')
+    const span = document.createElement("span");
+    span.setAttribute("class", "highlight");
+    span.classList='weather'
+    document.body.appendChild(span);
+    span.append(`The weather in the ${country} today is ${weatherObj[country]}`)
 }('UK'))
