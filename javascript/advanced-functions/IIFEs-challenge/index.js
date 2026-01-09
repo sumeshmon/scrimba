@@ -12,5 +12,6 @@
     span.setAttribute("class", "highlight");
     span.classList='weather'
     document.body.appendChild(span);
+    console.log(weatherObj);    
     span.append(`The weather in the ${country} today is ${weatherObj[country]}`)
 }('UK'))
