@@ -1,9 +1,9 @@
 function countUp(start, end) {
     console.log(start);
-    if(start === end){
+    if(start >= end){
         return start
     }
-    countUp(start + 1,  end)
+    countUp(start + 1, end)
 }
 countUp(2, 6)
 
