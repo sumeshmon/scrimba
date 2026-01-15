@@ -1,4 +1,6 @@
-const calculateVolume = width => length => height => width * length * height
+const calculateVolume = width => length => height => {
+    return width * length * height
+}
 
 // changing the height
 const calculateBaseAreaVolume = calculateVolume(3)(6)
