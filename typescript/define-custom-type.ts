@@ -1,3 +1,4 @@
+ // Challenge: finish the object type definition
 
 type Person = {
     name: string
@@ -5,7 +6,7 @@ type Person = {
     isStudent: boolean
 }
 
-let person1: Person = {
+let person1 : Person = {
     name: "Joe",
     age: 42,
     isStudent: true
