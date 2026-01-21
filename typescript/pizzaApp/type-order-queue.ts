@@ -6,11 +6,15 @@ type Pizza = {
     name: string
     price: number
 }
+/**
+ * Challenge: using literal types and unions, update the Order status so that
+ * it can only ever be "ordered" or "completed"
+ */
 
 type Order = {
     id: number
     pizza: Pizza
-    status: string
+    status: 'ordered' | 'completed'
 }
 
 const menu = [
@@ -23,6 +27,7 @@ const menu = [
 let cashInRegister = 100
 let nextOrderId = 1
 const orderHistory: Order[] = []
+// const orderHistory: Array<Order> = []
 
 function addNewPizza(pizzaObj: Pizza) {
     menu.push(pizzaObj)
@@ -35,7 +40,7 @@ function placeOrder(pizzaName: string) {
         return
     }
     cashInRegister += selectedPizza.price
-    const newOrder = { id: nextOrderId++, pizza: selectedPizza, status: "ordered" }
+    const newOrder:Order = { id: nextOrderId++, pizza: selectedPizza, status: "ordered" }
     orderHistory.push(newOrder)
     return newOrder
 }
