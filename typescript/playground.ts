@@ -1,11 +1,5 @@
-type MenuItem = {
-  name: string
-  price: number
-}
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
 
-const menu: Array<MenuItem> = [
-  { name: "Margherita", price: 8 },
-  { name: "Pepperoni", price: 10 },
-  { name: "Hawaiian", price: 10 },
-  { name: "Veggie", price: 9 },
-]
+const returnedTarget = Object.assign(target, source);
+console.log(returnedTarget);
