@@ -18,6 +18,6 @@ export default function Entry(){
                 <span className='date'>12 Jan, 2023 - 24 Jan, 2023</span>
                 <p className='description'>Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.</p>
          </div>
-       </div>
+       </div> 
     )
 } 
