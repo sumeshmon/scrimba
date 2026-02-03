@@ -1,17 +1,63 @@
-body{
+body {
   max-width: 600px;
   margin: 0 auto;
   background-color: #fff;
-  align-items:baseline;
+  align-items: baseline;
   min-width: 600px;
+  color: #333333;
 }
-#root{
+
+#root {
   display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-header{
+
+header {
   background-color: rgb(239, 31, 31);
   display: flex;
-  width: 100%;
   justify-content: center;
   padding: 20px 10px;
+  color: #fff;
+
+  img {
+    padding-right: 10px;
+  }
+}
+
+.travel {
+  padding: 15px 0;
+  display: flex;
+}
+
+.travel__image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+
+}
+
+.travel__content {
+  padding: 0 15px;
+}
+
+.travel__map {
+  color: #333;
+}
+
+.travel__map img {
+  width: 12px;
+  padding-right: 5px;
+}
+
+.location-link {
+  color: chocolate;
+  display: inline-block;
+  padding-left: 10px;
+  text-decoration: underline;
+}
+
+h2 {
+  margin: 00 0 10px;
 }

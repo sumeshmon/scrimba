@@ -1,7 +1,11 @@
-import Header from "./Header"
+import Entry from "./components/Entry"
+import Header from "./components/Header"
 
-export default function () {
+export default function App() {
     return(
+       <>
         <Header/>
+        <Entry/>
+       </>
     )
 }
