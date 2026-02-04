@@ -28,3 +28,8 @@ function Page () {
 
 # Declarativity in React means
 You describe what the UI should look like for a given state, and React takes care of how to update the DOM.
+
+# What do props help us accomplish?
+Make a component more reusable.
+
+

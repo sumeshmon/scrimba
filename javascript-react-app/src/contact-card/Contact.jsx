@@ -1,29 +1,36 @@
-import image from '../assets/dummy.png'
-import emailIcon from '../assets/email.png'
+/**
+ * Challenge: Fix the code below to use the `props`
+ * object values in place of the hardcoded values below
+ * 
+ * Note: There will be a small bug in the code, so do your
+ * best to squash it! 🐛
+ */
 import phoneIcon from '../assets/phone.png'
-export default function ContactCard() {
+import emailIcon from '../assets/email.png'
+export default function Contact(props) {
+    console.log(typeof props)
+    const {image, name, phone, email} = props
     return (
-       
-            <article className="contact-card">
+        <article className="contact-card">
+            <img
+                src={image}
+                alt="Photo of Mr. Whiskerson"
+            />
+            <h3>{name}</h3>
+            <div className="info-group">
                 <img
-                    src={image}
-                    alt="Photo of Mr. Whiskerson"
+                    src={phoneIcon}
+                    alt="phone icon"
                 />
-                <h3>Mr. Whiskerson</h3>
-                <div className="info-group">
-                    <img
-                        src={phoneIcon}
-                        alt="phone icon"
-                    />
-                    <p>(212) 555-1234</p>
-                </div>
-                <div className="info-group">
-                    <img
-                        src={emailIcon}
-                        alt="mail icon"
-                    />
-                    <p>mr.whiskaz@catnap.meow</p>
-                </div>
-            </article>
+                <p>{phone}</p> 
+            </div> 
+            <div className="info-group">
+                <img
+                     src={emailIcon}
+                    alt="mail icon"
+                />
+                <p>{email}</p>
+            </div>
+        </article>
     )
 }
