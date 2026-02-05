@@ -128,3 +128,12 @@ body {
     font-size: 12px;
     color: #2B283A;
 }
+.joke{
+  margin-bottom: 20px;
+  color: #777777;
+   font-style: italic;
+}
+.joke b{
+  color: rgb(73, 73, 73);
+   font-style: normal;
+}

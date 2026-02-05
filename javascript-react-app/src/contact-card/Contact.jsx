@@ -9,7 +9,7 @@ import phoneIcon from '../assets/phone.png'
 import emailIcon from '../assets/email.png'
 export default function Contact(props) {
     console.log(typeof props)
-    const {image, name, phone, email} = props
+    const {image, name, phone, email} = props 
     return (
         <article className="contact-card">
             <img
