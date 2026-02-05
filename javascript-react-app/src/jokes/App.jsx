@@ -1,4 +1,5 @@
 import Jokes from "./Jokes";
+import JokesData from "./JokesData";
 /**
  * Challenge: Think critically - how would you pass in a prop that 
  * isn't a string datatype.
@@ -10,28 +11,22 @@ import Jokes from "./Jokes";
  */
 
 export default function App() {
-    return (
+    /**
+     * Challenge: See if you can correctly pass the necessary props to the 
+     * Joke component in the .map() (and render the jokeElements array) so 
+     * the jokes show up on the page again
+     */
+    const jokeElements = JokesData.map((joke) => {
+            return <Jokes 
+                setup = {joke.setup}
+                punchline = {joke.punchline}
+            />
+    })
+    return ( 
         <>
-            <Jokes
-                punchline="I can't wait to see her face light up when she opens it."
-                upvotes={20}
-                isPun={true}
-                comments={[
-                    { auther: 'Sumesh', title: 'My title' }
-                ]}
-            />
-            <Jokes
-                setup='How did the hacker escape the police?'
-                punchline="He just ransomware!"
-                upvotes={10}
-                isPun={true}
-            />
-            <Jokes
-                setup='How did the hacker escape the police?'
-                punchline="He just ransomware!"
-                upvotes={203}
-                isPun={false}
-            />
+            <main>
+                {jokeElements}
+            </main>
         </>
     )
 } 
