@@ -31,8 +31,8 @@ header {
 }
 
 .travel__image img {
+  width: 220px;
   height: 100%;
-  width: 100%;
   object-fit: cover;
   border-radius: 6px;
 
