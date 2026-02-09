@@ -12,12 +12,12 @@ export default function App() {
  */
     const today = new Date().toISOString().split("T")[0];
     const reversed = today.split("-").reverse().join("-");
-    const data = JournalData.map((data) => {
+    const data = JournalData.map((entry) => {
         
         return (
             <Entry
-                key={data.id} 
-               {...data}
+                key={entry.id} 
+               {...entry}
             />
         )
 
