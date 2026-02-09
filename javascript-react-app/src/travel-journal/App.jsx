@@ -12,15 +12,12 @@ export default function App() {
  */
     const today = new Date().toISOString().split("T")[0];
     const reversed = today.split("-").reverse().join("-");
-    const data = JournalData.map(data => {
+    const data = JournalData.map((data) => {
+        
         return (
             <Entry
-                place={data.country}
-                date={data.dates}
-                location={data.title}
-                description={data.text}
-                link={data.googleMapsLink}
-                img={data.img}
+                key={data.id} 
+               {...data}
             />
         )
 

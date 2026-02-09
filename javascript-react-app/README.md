@@ -40,3 +40,7 @@ in some way.
 
 # What do we usually use `.map()` for in React?
 Convert an array of raw data into an array of JSX elements that can be displayed on the page.
+
+# key prop
+Keys help React know which item is which when a list changes.
+
