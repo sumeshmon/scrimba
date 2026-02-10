@@ -44,3 +44,8 @@ Convert an array of raw data into an array of JSX elements that can be displayed
 # key prop
 Keys help React know which item is which when a list changes.
 
+# eventListners
+https://react.dev/reference/react-dom/components/common#mouseevent-handler
+
+# What is React state?
+data that changes over time and causes the UI to re-render

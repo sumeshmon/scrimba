@@ -4,9 +4,10 @@ export default function SurroundingHtagArray() {
      * JSX elements by surrounding each ninja turtle with an <h2> element
      */
     const ninjaTurtles = ["Donatello", "Michaelangelo", "Rafael", "Leonardo"]
+    const ninjaTurtlesItems = ninjaTurtles.map(name => <h3 key={name}>{name}</h3>)
     return (
         <main>
-            {ninjaTurtles.map(name => <h2>{name}</h2>)}
+            {ninjaTurtlesItems}
         </main>  
     )
 
