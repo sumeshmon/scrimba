@@ -27,9 +27,13 @@ export default function Main() {
     */
     function handleSubmit(event) {
         event.preventDefault()
-        console.log('Form submitted');
+        console.log("target:", event.target);
+        console.log("currentTarget:", event.currentTarget);
         const formData = new FormData(event.currentTarget)
+        // console.log(1, formData);
+
         const newIngredient = formData.get('ingredient')
+        // console.log(2, formData.get("ingredient"));
         ingredients.push(newIngredient)
         console.log(ingredients);
 

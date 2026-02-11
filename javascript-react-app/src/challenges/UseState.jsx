@@ -1,10 +1,8 @@
 import React from "react"
-import { useState } from "react";
 
 export default function UseState() {
     const testReactState = React.useState()
     //console.log(testReactState); // undifined
-
 
     /**
      * Challenge: Replace our hard-coded "Yes" on the page with 
@@ -16,7 +14,8 @@ export default function UseState() {
 
     const [state, setState] = React.useState("Sumesh")
     function testState() {
-        setState("Sali")
+        setState("Sali") 
+        
     }
 
     return (
