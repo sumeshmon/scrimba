@@ -1,9 +1,9 @@
-export default function AddindHTMLTagElementArray(){
-    
+export default function AddindHTMLTagElementArray() {
+
   const pokemon = ["Bulbasaur", "Charmander", "Squirtle"]
-    const result = pokemon.map(name => `<p>${name}</p>`);
-    console.log(result);
-    
+  const result = pokemon.map(name => `<p>${name}</p>`);
+  console.log(result);
+
 }
 
 

@@ -3,12 +3,16 @@
 // import AddindHTMLTagElementArray from "./AddindHTMLTagElementArray";
 // import SurroundingHtagArray from "./SurroundingHtagArray";
 // import EventListner from './EventListner'
-// import UseState from "./UseState";
-import StatePractise from './StatePractise'
+// import UseState from "./states/UseState";
+// import StatePractise from './states/StatePractise'
+// import TernaryPractise from './states/TernaryPractise'
+// import ToggleState from './states/ToggleState'
+import ComplexStateArray from './states/ComplexStateArray'
+
 export default function () {
     return (
         <>
-            <StatePractise/>
+            <ComplexStateArray/>
         </>
     )
 

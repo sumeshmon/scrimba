@@ -25,8 +25,5 @@ export default function UseState() {
             <button className="value" onClick={testState}>{result}</button>
         </main>
     )
-
-
-
 }
 

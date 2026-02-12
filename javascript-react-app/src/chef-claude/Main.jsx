@@ -1,8 +1,6 @@
+import React from 'react'
 export default function Main() {
-    const ingredients = ["Chicken", "Oregano", "Tomatoes"]
-    const ingredientsListItems = ingredients.map((ingredient) => {
-        return <li key={ingredient}>{ingredient}</li>
-    })
+
     /**
      * Review Challenge:
      * Map over the list of ingredients and render them as list items
@@ -12,30 +10,47 @@ export default function Main() {
      */
 
     /**
-     * Challenge:
+     * Challenge 1:
      * Add an `onSubmit` event listener on the form. Have the function
      * simply console.log("Form submitted!") for now
      */
 
     /**
-    * Challenge:
+    * Challenge 2:
     * Add the new ingredient to the array of ingredients. Also, add a 
     * console.log(ingredients) after adding the ingredient, because 
     * **warning**: you aren't going to see the page update!
     * 
     * Hint: this is a one-liner solution, so don't overthink it 😅
     */
+
+    /** 
+     * Challenge 3: Update our app so that when the user enters a
+     * new ingredient and submits the form, it adds that new
+     * ingredient to our list!
+     */
+    const [ingredients, setIngredients] = React.useState([])
+
+    const ingredientsListItems = ingredients.map((ingredient) => {
+        return <li key={ingredient}>{ingredient}</li>
+    })
+
+
     function handleSubmit(event) {
         event.preventDefault()
-        console.log("target:", event.target);
-        console.log("currentTarget:", event.currentTarget);
+
+        // console.log("target:", event.target);
+        // console.log("currentTarget:", event.currentTarget);
         const formData = new FormData(event.currentTarget)
         // console.log(1, formData);
 
         const newIngredient = formData.get('ingredient')
         // console.log(2, formData.get("ingredient"));
-        ingredients.push(newIngredient)
-        console.log(ingredients);
+        setIngredients(prevItem => [
+            ...prevItem,
+            newIngredient
+        ]);
+        event.currentTarget.reset();
 
     }
     return (
