@@ -7,12 +7,14 @@
 // import StatePractise from './states/StatePractise'
 // import TernaryPractise from './states/TernaryPractise'
 // import ToggleState from './states/ToggleState'
-import ComplexStateArray from './states/ComplexStateArray'
+// import ComplexStateArray from './states/ComplexStateArray'
+// import ComplexStateObject from './states/ComplexStateObject'
+import SignUp from "./form/SignUp"
 
 export default function () {
     return (
         <>
-            <ComplexStateArray/>
+            <SignUp/>
         </>
     )
 

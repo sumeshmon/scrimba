@@ -60,4 +60,8 @@ Whenever we don't really care about (or need) the old value, we simply want to s
 # When would you want to pass the second option (from answer above) to the state setter function?
 When would you want to pass the second option (from answer above) to the state setter function?
 
-#
+# form
+https://react.dev/reference/react-dom/components/form#noun-labs-1201738-(2)
+
+# What is FormData?
+FormData is a built-in browser API used to collect data from a <form> element.
