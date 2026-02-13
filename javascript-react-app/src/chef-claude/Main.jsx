@@ -36,7 +36,7 @@ export default function Main() {
     })
 
 
-    function handleSubmit(FormData) {    
+    function addIngredient(FormData) {    
         const newIngredient = FormData.get('ingredient')
         // console.log(2, formData.get("ingredient"));
         setIngredients(prevItem => [
@@ -44,12 +44,11 @@ export default function Main() {
             newIngredient
         ]);
         // console.log(newIngredient);
-        
 
     }
     return (
         <main>
-            <form action={handleSubmit} className="add-ingredient-form">
+            <form action={addIngredient} className="add-ingredient-form">
                 <input
                     type="text"
                     placeholder="e.g. oregano"

@@ -5,13 +5,13 @@ import './index.css'
 import './travel.css'
 import './chef-claude.css'
 import './card.css'
-// import './form.css'
+import './form.css'
 // import App from './App.jsx'
 // import App from './travel-journal/App.jsx'
 // import App from './contact-card/App.jsx'
 // import App from './jokes/App.jsx'
-// import App from './challenges/App'
-import App from "./chef-claude/App.jsx" 
+import App from './challenges/App'
+// import App from "./chef-claude/App.jsx" 
 
 createRoot(document.getElementById('root')).render(
   <App/> 

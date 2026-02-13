@@ -64,3 +64,12 @@ main {
     content: "+";
     margin-right: 5px;
 }
+main{
+    flex-direction: column;
+}
+ul{
+    display: block;
+}
+ul li{
+    color: #fff;
+}

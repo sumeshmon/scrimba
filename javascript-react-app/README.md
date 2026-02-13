@@ -65,3 +65,10 @@ https://react.dev/reference/react-dom/components/form#noun-labs-1201738-(2)
 
 # What is FormData?
 FormData is a built-in browser API used to collect data from a <form> element.
+# radio button
+If not selected then the value should be 'null', if didn't add value then the value should be 'on'.
+# checkbox
+If use .get will receive one value of the first checkbox even if all are checked. Use .getAll, it will return with an array including all values.
+
+# Object.fromEntries()
+to grab all the form data
