@@ -9,12 +9,13 @@
 // import ToggleState from './states/ToggleState'
 // import ComplexStateArray from './states/ComplexStateArray'
 // import ComplexStateObject from './states/ComplexStateObject'
-import SignUp from "./form/SignUp"
+// import SignUp from "./form/SignUp"
+import DisplayHeading from './conditional-rendering/DisplayHeading'
 
 export default function () {
     return (
         <>
-            <SignUp/>
+            <DisplayHeading/>
         </>
     )
 
