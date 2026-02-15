@@ -29,15 +29,17 @@ export default function Main() {
      * new ingredient and submits the form, it adds that new
      * ingredient to our list!
      */
-    const [ingredients, setIngredients] = React.useState([])
+    const [ingredients, setIngredients] = React.useState(
+        ["all the main spices", "pasta", "ground beef", "tomato paste"]
+    )
 
     const ingredientsListItems = ingredients.map((ingredient) => {
         return <li key={ingredient}>{ingredient}</li>
     })
 
 
-    function addIngredient(FormData) {    
-        const newIngredient = FormData.get('ingredient')
+    function addIngredient(FormData) {
+        let newIngredient = FormData.get('ingredient')
         // console.log(2, formData.get("ingredient"));
         setIngredients(prevItem => [
             ...prevItem,
@@ -46,8 +48,37 @@ export default function Main() {
         // console.log(newIngredient);
 
     }
+    /**
+    * Challenge 4:
+    * Using conditional rendering, only render the new <section> IF
+    * there are ingredients added to the list of ingredients.
+    */
+
+    /**
+    * Challenge 5:
+    * Only display the div.get-recipe-container if the ingredients list
+    * has more than 3 items in it. (Fewer than that and it might not
+    * give great results from the chef 🤖👩‍🍳)
+    */
+
+    /**
+        * Challenge 6:
+        * 1. Create a boolean state that, for now, will represent whether
+        *    we've gotten a recipe back from the "chef". Default to `false`.
+        *    Can call it `recipeShown`.
+        * 2. Grab the markup in recipeCode.md and paste it below. This will
+        *    be a placeholder for the content that will come back from the 
+        *    chef once we set up that feature.
+        * 3. When the user clicks the "Get a recipe" button, flip the
+        *    `recipeShown` state to true.
+        * 4. Only display the recipe code content if `recipeShown` is true.
+        */
+    const [recipeShown, setrecipeShown] = React.useState(false)
+    function handleClickRecipe() {
+       setrecipeShown( recipeShown => !recipeShown )
+    }
     return (
-        <main>
+        <main className='chef-main'>
             <form action={addIngredient} className="add-ingredient-form">
                 <input
                     type="text"
@@ -57,9 +88,26 @@ export default function Main() {
                 />
                 <button>Add ingredient</button>
             </form>
-            <ul>
-                {ingredientsListItems}
-            </ul>
+            {ingredients.length > 0 &&
+                <section>
+                    <h2>Ingredients on hand:</h2>
+                    <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
+                    {ingredients.length > 3 &&
+                        <div className="get-recipe-container">
+                            <div>
+                                <h3>Ready for a recipe?</h3>
+                                <p>Generate a recipe from your list of ingredients.</p>
+                            </div>
+                            <button onClick={handleClickRecipe}>Get a recipe</button>
+                        </div>
+                    }
+
+                </section>
+            }
+            {recipeShown && 
+                <h2>asdad</h2>          
+            }
+            
         </main>
     )
 } 

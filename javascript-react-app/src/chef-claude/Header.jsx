@@ -8,7 +8,7 @@ export default function Header (){
                     <span className='chef-title'>Chef Claude</span>
                 </a>
                 
-            </header>
+            </header> 
         </>
     )
 }
