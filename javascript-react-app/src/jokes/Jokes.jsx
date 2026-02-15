@@ -19,11 +19,11 @@ export default function Jokes(props) {
         <>
             <div className="joke">
                 {props.setup && <div className="joke-title"><b>Setup:</b> {props.setup}</div>}
-                {isShown && (
-                     <div className="joke-title"><b>Punchline:</b> {props.punchline}</div>
-                )}
+                {isShown 
+                    ?<div className="joke-title"><b>Punchline:</b> {props.punchline} </div>
+                : null}
                 <br/>
-                <button onClick={handlShow}>{isShown ? 'Hide punchline' : 'Show punchline'}</button>
+                <button onClick={handlShow}>{isShown ? 'Hide' : 'Show'} punchline</button>
             </div>
 
         </>

@@ -10,12 +10,13 @@
 // import ComplexStateArray from './states/ComplexStateArray'
 // import ComplexStateObject from './states/ComplexStateObject'
 // import SignUp from "./form/SignUp"
-import DisplayHeading from './conditional-rendering/DisplayHeading'
+// import DisplayHeading from './conditional-rendering/DisplayHeading'
+import MultipleCondition from './conditional-rendering/MultipleCondition'
 
 export default function () {
     return (
         <>
-            <DisplayHeading/>
+            <MultipleCondition/>
         </>
     )
 
