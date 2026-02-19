@@ -13,12 +13,14 @@
 // import DisplayHeading from './conditional-rendering/DisplayHeading'
 // import MultipleCondition from './conditional-rendering/MultipleCondition'
 // import ContactCard from './states/ContactCard'
-import Index from './data-passing-components/Index'
+// import Index from './data-passing-components/Index'
+import Index from './sound-pad/Index'
 
 export default function () {
+    
     return (
         <>
-            <Index/>
+            <Index darkMode={false}/>
         </>
     )
 
