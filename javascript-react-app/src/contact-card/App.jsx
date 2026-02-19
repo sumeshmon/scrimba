@@ -15,7 +15,7 @@ export default function App() {
                     image={imagePlaceholder}
                     name='Mr. asdasd'
                     phone= '222'
-                    email='test@test.com'
+                    email='test@test.com' 
 
                 />
             </div>
