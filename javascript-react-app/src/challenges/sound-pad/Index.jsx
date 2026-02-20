@@ -39,14 +39,39 @@ export default function Index(props) {
      * Our buttons got turned off by default! Update the code
      * so if the button is "on", it has the className of "on".
      */
-    const [pads, setpads] = React.useState(padsData)
 
+    /**
+     * Challenge 4: Create a toggle() function that logs
+     * "clicked!" to the console
+     * 
+     * Pass that function down to each of the Pad components
+     * and set it up so when they get clicked, the function runs
+     */
+
+    /**
+        * Challenge 5:
+        * Call setPads to update the state of the one pad that was
+        * clicked. Map over the previous pads array, and if the current
+        * item you're iterating over has the same id as the `id` passed
+        * to this function, then return a new object with the `on` value
+        * set to the opposite of what it was before.
+        * Otherwise (if the ids don't match), just return the previous
+        * item as it was, unchanged.
+        */
+    const [pads, setPads] = React.useState(padsData)
+    function toggle(id){
+        setPads ( prev => prev.map( item=>{
+            return item.id === id ? {...item, on: !item.on} : item
+        }))
+        
+    }
     const buttonElements = pads.map(pad => (
         <Pad
             color={pad.color}
             key={pad.id}
             id={pad.id}
             isOn={pad.on}
+            toggle={toggle}
 
         />
     ))
