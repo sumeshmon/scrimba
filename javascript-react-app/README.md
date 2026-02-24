@@ -84,3 +84,50 @@ When you need to decide which of 2 things to display
 
 # What if you need to decide between > 2 options on what to display?
 if...else if...else conditional or maybe a `switch` statement.
+
+# What is Functional Programming in React?
+React follows functional programming principles such as pure functions, immutability, declarative UI, and functional state updates. Components are treated as pure functions of props and state, and state is updated immutably using functions like setState with previous state.
+
+Pure functions :
+Same input → Same output
+No side effects
+Does not modify external data
+
+Immutable data : 
+Instead of changing state, props directly React uses immutable updates
+
+Declarative UI : 
+{condition && <Component />}
+
+# react-markdown
+https://www.npmjs.com/package/react-markdown/v/8.0.6#use
+
+# Escape Hatches
+https://react.dev/learn/escape-hatches
+
+# useEffect
+https://react.dev/reference/react/useEffect
+
+# In what way are React components meant to be "pure functions"
+- Given the same props or state, the component will always return
+  the same content, or UI
+
+# What is a "side effect" in React? What are some examples?
+- Any code that affects or interacts with an outside system
+- local storage, API, websockets, DOM manipulation
+
+#  What is NOT a "side effect" in React? Examples?
+- Anything that React is in charge of.
+- Maintaining state, keeping the UI in sync with data, 
+  rendering DOM elements
+
+# When does React run your useEffect function? When does it NOT run
+   the effect function?
+- As soon as the component renders for the first time
+- On every re-render of the component (assuming no dependencies array)
+- Will NOT run the effect when the values of the dependencies in the
+  array stay the same between renders
+
+#  How would you explain what the "dependecies array" is?
+- Second parameter to the useEffect function
+- A way for React to know whether or not it should re-run the effect function

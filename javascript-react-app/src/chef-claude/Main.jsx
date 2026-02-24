@@ -99,11 +99,14 @@ export default function Main() {
      * done, so there will likely be some extra work to be done
      * beyond what I've listed above.
      */
+    // console.log(import.meta.env.VITE_HF_ACCESS_TOKEN)
     const [recipeShown, setrecipeShown] = React.useState(false)
-    function handleClickRecipe() {
+    function getRecipe() {
         setrecipeShown(recipeShown => !recipeShown)
     }
+
     return (
+
         <main className='chef-main'>
             <form action={addIngredient} className="add-ingredient-form">
                 <input
@@ -114,12 +117,12 @@ export default function Main() {
                 />
                 <button>Add ingredient</button>
             </form>
-           <IngredientsList
-                content = {ingredientsListItems}
-                handleClickRecipe={handleClickRecipe}
-           />
+            <IngredientsList
+                content={ingredientsListItems}
+                getRecipe={getRecipe}
+            />
             {recipeShown && <ClaudeRecipe />}
-           
+
 
         </main>
     )

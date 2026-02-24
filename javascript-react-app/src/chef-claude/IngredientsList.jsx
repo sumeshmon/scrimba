@@ -1,4 +1,4 @@
-export default function IngredientsList({content, handleClickRecipe }){
+export default function IngredientsList({content, getRecipe }){
     return (
         <>
             <section>
@@ -10,7 +10,7 @@ export default function IngredientsList({content, handleClickRecipe }){
                                 <h3>Ready for a recipe?</h3>
                                 <p>Generate a recipe from your list of ingredients.</p>
                             </div>
-                            <button onClick={handleClickRecipe}>Get a recipe</button>
+                            <button onClick={getRecipe}>Get a recipe</button>
                         </div>
                     }
                 </section>
