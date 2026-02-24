@@ -14,13 +14,14 @@
 // import MultipleCondition from './conditional-rendering/MultipleCondition'
 // import ContactCard from './states/ContactCard'
 // import Index from './data-passing-components/Index'
-import Index from './sound-pad/Index'
+// import Index from './sound-pad/Index'
+import PlayGround  from './playGround'
 
 export default function () {
     
     return (
         <>
-            <Index darkMode={false}/>
+            <PlayGround/>
         </>
     )
 

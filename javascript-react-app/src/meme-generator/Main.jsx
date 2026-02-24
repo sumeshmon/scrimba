@@ -1,4 +1,4 @@
-import {useState} from "react"
+import React from "react"
 export default function Main() {
     /**
         * Challenge 1: move the hardcoded meme info into React
@@ -13,23 +13,41 @@ export default function Main() {
         * 
         * Note: don't worry about bottomText at this point.
     */
-
-
-    const [meme, setMeme] = useState({
+    const [meme, setMeme] = React.useState({
         topText: "One does not simply",
         bottomText: "Walk into Mordor",
-        imageUrl: "http://i.imgflip.com/1bij.jpg"
+        imageUrl: 'http://i.imgflip.com/1bij.jpg'
     })
-    function handleChange(event){
+    function handleChange(event) {
         // console.log(event.currentTarget);        
-        const {name, value} = event.currentTarget
+        const { name, value } = event.currentTarget
         // console.log(name, value);
-        setMeme (preMeme => ({
+        setMeme(preMeme => ({
             ...preMeme,
-            [name] : value
+            [name]: value
         }))
-        
     }
+    /**
+            * Challenge 3:
+            * Get an array of memes from the imgflip API as soon as
+            * this component renders for the first time.
+            * Check the imgflip documentation for the correct URL.
+            * Save the array of memes (not the whole response
+            * data) to state. (For this app, we'll randomly choose
+            * one of the memes from this array when the user clicks
+            * the "Get a new meme image" button, but we'll do that in
+            * a separate challenge.)
+            * 
+            * Hint: for now, don't try to use an async/await function.
+            * Instead, use `.then()` to resolve the promises
+            * from using `fetch`. We'll learn why after this challenge.
+            */
+    const [allMemes, setAllMemes] = React.useState([])
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data.data.memes))
+    }, [])
     return (
 
         <main className="meme-main">
@@ -53,7 +71,7 @@ export default function Main() {
                         onChange={handleChange}
                     />
                 </label>
-                <button>Get a new meme image 🖼</button>
+                <button >Get a new meme image 🖼</button>
             </div>
             <div className="meme">
                 <img src={meme.imageUrl} />
