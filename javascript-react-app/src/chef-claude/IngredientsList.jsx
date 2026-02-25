@@ -1,7 +1,7 @@
-export default function IngredientsList({content, getRecipe }){
+export default function IngredientsList({content, getRecipe, ref }){
     return (
         <>
-            <section>
+            <section ref={ref}>
                     <h2>Ingredients on hand:</h2>
                     <ul className="ingredients-list" aria-live="polite">{content}</ul>
                     {content.length > 3 &&

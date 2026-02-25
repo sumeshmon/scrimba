@@ -105,6 +105,22 @@ export default function Main() {
         setrecipeShown(recipeShown => !recipeShown)
     }
 
+   const [recipe, setRecipe] = React.useState("")
+    const recipeSection = React.useRef(null)
+    console.log(recipeSection);
+    
+    
+    React.useEffect(() => {
+        if (recipe !== "" && recipeSection.current !== null) {
+            recipeSection.current.scrollIntoView({behavior: "smooth"})
+            // const yCoord = recipeSection.current.getBoundingClientRect().top + window.scrollY
+            // window.scroll({
+            //     top: yCoord,
+            //     behavior: "smooth"
+            // })
+        }
+    }, [recipe])
+
     return (
 
         <main className='chef-main'>
@@ -118,6 +134,7 @@ export default function Main() {
                 <button>Add ingredient</button>
             </form>
             <IngredientsList
+                ref={recipeSection}
                 content={ingredientsListItems}
                 getRecipe={getRecipe}
             />

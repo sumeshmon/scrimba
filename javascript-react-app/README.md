@@ -131,3 +131,7 @@ https://react.dev/reference/react/useEffect
 #  How would you explain what the "dependecies array" is?
 - Second parameter to the useEffect function
 - A way for React to know whether or not it should re-run the effect function
+
+# What is useRef?
+1. Stores a value that does NOT cause re-render
+2. Gives access to a DOM element directly
