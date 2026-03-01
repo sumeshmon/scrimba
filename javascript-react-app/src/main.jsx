@@ -14,8 +14,8 @@ import './meme.css'
 // import App from './travel-journal/App.jsx'
 // import App from './contact-card/App.jsx'
 // import App from './jokes/App.jsx'
-// import App from './challenges/App'
-import App from "./chef-claude/App.jsx" 
+import App from './challenges/App'
+// import App from "./chef-claude/App.jsx" 
 // import App  from './meme-generator/App'
 // import App from "./challenges/fetching-data/App"
 // import App from "./challenges/state-effects/App"
