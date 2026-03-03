@@ -1,8 +1,15 @@
 React Interview Questions (20)
 	1.	What is the difference between controlled and uncontrolled components in React?
 Follow-up: When would you intentionally choose uncontrolled components?
+
+Controlled components store form data in React state and update via onChange. Uncontrolled components store form data in the DOM and are accessed using refs. Controlled components are preferred for validation and predictable state, while uncontrolled components are useful for simple forms, performance optimization, or integrating with non-React code.
+
 	2.	How does React decide when to re-render a component?
 Follow-up: How does immutability affect re-rendering?
+
+React re-renders a component when its state, props, or context values change. It compares previous and next values using shallow comparison (Object.is). Because React relies on reference equality, immutable updates are important. Mutating existing objects keeps the same reference and may prevent re-rendering, while creating new objects ensures React detects changes correctly.
+
+
 	3.	Explain the difference between useState and useReducer.
 Follow-up: In what scenarios is useReducer preferred?
 	4.	What are the rules of hooks in React?
