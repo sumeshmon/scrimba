@@ -5,13 +5,14 @@ import './App.css'
 import Die from './Die'
 function App() {
 
-  const [value, setValue] = useState(0)
 
   function generateAllNewDice() {
-   
     return new Array(10)
       .fill(0)
-      .map(() => Math.ceil(Math.random() * 6))
+      .map( ()=>({
+        value: Math.ceil(Math.random() * 6),
+        isHeld:false
+      }))
 
     // or 
     //   const arr = Array.from({ length: 10 }, () => {
@@ -19,15 +20,20 @@ function App() {
     // })
   }
 
-  const [dice, setdice] = useState(generateAllNewDice())
-  const diceElements = dice.map(items =>
-    <Die
-      key={items.id}
-      value={items}
-    />
-  )
+// console.log(generateAllNewDice());
 
-  function rollDice(){
+  const [dice, setdice] = useState(generateAllNewDice())  
+  // console.log(1, dice);
+  
+  const diceElements = dice.map( die=>(
+    <Die
+      key={die}
+      value={die.value}
+      isHeld={die.isHeld}
+    />
+  ))
+
+  function rollDice() {
     setdice(generateAllNewDice())
   }
   return (
@@ -36,7 +42,7 @@ function App() {
         <div className="dice-container">
           {diceElements}
         </div>
-         <button onClick={rollDice}>Roll Dice</button>
+        <button className="roll-dice" onClick={rollDice}>Roll Dice</button>
       </main>
     </>
   )
