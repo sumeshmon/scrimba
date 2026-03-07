@@ -3,15 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Die from './Die'
+import { nanoid } from 'nanoid'
 function App() {
 
 
   function generateAllNewDice() {
     return new Array(10)
       .fill(0)
-      .map( ()=>({
+      .map(() => ({
         value: Math.ceil(Math.random() * 6),
-        isHeld:false
+        isHeld: true, 
+        id: nanoid() 
       }))
 
     // or 
@@ -20,18 +22,23 @@ function App() {
     // })
   }
 
-// console.log(generateAllNewDice());
+  // console.log(generateAllNewDice());
 
-  const [dice, setdice] = useState(generateAllNewDice())  
+  const [dice, setdice] = useState(generateAllNewDice())
   // console.log(1, dice);
-  
-  const diceElements = dice.map( die=>(
+
+  const diceElements = dice.map(die => (
     <Die
-      key={die}
+      key={die.id}
       value={die.value}
       isHeld={die.isHeld}
+      hold={hold}
+      id={die.id}
     />
   ))
+  function hold(id){
+    console.log(id)
+  }
 
   function rollDice() {
     setdice(generateAllNewDice())
@@ -42,7 +49,7 @@ function App() {
         <div className="dice-container">
           {diceElements}
         </div>
-        <button className="roll-dice" onClick={rollDice}>Roll Dice</button>
+        <button className="roll-dice" onClick={rollDice}>Roll</button>
       </main>
     </>
   )
