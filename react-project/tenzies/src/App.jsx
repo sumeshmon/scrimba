@@ -33,11 +33,16 @@ function App() {
       value={die.value}
       isHeld={die.isHeld}
       hold={hold}
-      id={die.id}
+      id={die.id} 
     />
   ))
   function hold(id){
-    console.log(id)
+    setdice ( prev => prev.map(item=>{
+      console.log(prev);      
+      return item.id === id 
+      ? {...item, isHeld: !item.isHeld } 
+      : item
+    }))
   }
 
   function rollDice() {
