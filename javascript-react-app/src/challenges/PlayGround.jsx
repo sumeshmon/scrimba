@@ -39,8 +39,40 @@ export default function PlayGround() {
     // remove duplicate
     const myArr2 = [1, 0, 2, 5, 0, 3, 0, 7]
     const result2 = new Set( myArr2)
-    console.log(result2);
+    // console.log(result2);
+
+
+    // var vs let call stack
+    // for (let i = 0; i < 3; i++){
+    //     setTimeout( ()=>{
+    //         console.log(i)
+    //     }, 100)
+    // }
+
+    // interview tips
+    console.log([] == []);
+    // console.log({} == !{});
+    // console.log('sumesh' - 100);
+
     
+    // console.log(a);
+    let  a = 10
+
+    let testArr = [3,1,7,8,9,5,67,3]
+    const res = testArr.filter( (item ) => item > 5)
+    // console.log(res);
+    
+    function currying(a){
+        return function (b){
+            return function (c){
+                return a+b+c
+                
+            }
+        }
+    }
+    currying(2)(3)(4)
+    
+
     return (
         <>
             <h2 className="text-white">JS Play ground</h2>

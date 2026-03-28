@@ -12,8 +12,8 @@ function App() {
       .fill(0)
       .map(() => ({
         value: Math.ceil(Math.random() * 6),
-        isHeld: true, 
-        id: nanoid() 
+        isHeld: true,
+        id: nanoid()
       }))
 
     // or 
@@ -24,29 +24,40 @@ function App() {
 
   // console.log(generateAllNewDice());
 
-  const [dice, setdice] = useState(generateAllNewDice())
+  
+
+  const [dice, setDice] = useState(generateAllNewDice())
   // console.log(1, dice);
 
+  const gameWon = dice.every(die => die.isHeld) &&
+    dice.every(die => die.value === dice[0].value)
+  
   const diceElements = dice.map(die => (
     <Die
       key={die.id}
       value={die.value}
       isHeld={die.isHeld}
       hold={hold}
-      id={die.id} 
+      id={die.id}
     />
   ))
-  function hold(id){
-    setdice ( prev => prev.map(item=>{
-      console.log(prev);      
-      return item.id === id 
-      ? {...item, isHeld: !item.isHeld } 
-      : item
+  function hold(id) {
+    setDice(prev => prev.map(item => {
+      // console.log(prev);      
+      return item.id === id
+        ? { ...item, isHeld: !item.isHeld }
+        : item
     }))
   }
 
   function rollDice() {
-    setdice(generateAllNewDice())
+    setDice(prevDice =>
+      prevDice.map(item =>
+        item.isHeld
+          ? item
+          : { ...item, value: Math.ceil(Math.random() * 6) }
+      )
+    )
   }
   return (
     <>
@@ -54,7 +65,9 @@ function App() {
         <div className="dice-container">
           {diceElements}
         </div>
-        <button className="roll-dice" onClick={rollDice}>Roll</button>
+        <button className="roll-dice" onClick={rollDice}>
+        {gameWon ? "New Game" : "Roll"}
+        </button>
       </main>
     </>
   )
