@@ -1,6 +1,7 @@
 {
   "name": "wild-horizons",
   "version": "1.0.0",
+  
   "description": "a dataset of the planet’s most interesting places",
   "repository": {
     "type": "git",
@@ -8,9 +9,9 @@
   },
   "license": "ISC",
   "author": "sumesh",
-  "type": "hit enter to accept the default option",
+  "type": "module",
   "main": "server.js",
   "scripts": {
-    "test": "server.js"
+    "start": "node server.js"
   }
 }
