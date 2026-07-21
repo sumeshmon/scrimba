@@ -12,6 +12,6 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node query-parameters.js"
   }
 }

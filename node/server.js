@@ -1,5 +1,6 @@
 import http from 'node:http'
 import { getDataFromDB } from './database/db.js'
+import { getDataByPathParams } from './utils/getDataByPathParams.js'
 import { sendJSONResponse } from './utils/sendJSONResponse.js'
 const PORT = 8000
 /*
@@ -30,33 +31,40 @@ Challenge 3:
     (How can you get to what comes after the final slash?)
     (What method can you use to filter data?)
   */
+
+/*
+Challenge:
+1. Add an 'api/country/<country>' route.
+*/
 const server = http.createServer(async (req, res) => {
-    const destinations = await getDataFromDB()
-    // console.log(req.url);
-    if (req.url === '/api' && req.method === 'GET') {
-      sendJSONResponse(res, 200, destinations)
+  const destinations = await getDataFromDB()
+  // console.log(req.url);
+  if (req.url === '/api' && req.method === 'GET') {
+    sendJSONResponse(res, 200, destinations)
 
-    } else if (req.url.startsWith('/api/continent') && req.method === 'GET') {
-        const continent = req.url.split('/').pop()
-        const filteredData = destinations.filter((destination) => {
-            return destination.continent.toLocaleLowerCase() === continent.toLocaleLowerCase()
-        })
-        res.setHeader('Content-Type', 'application/json')
-        res.statusCode = 200
-        res.end(JSON.stringify(filteredData))
+  } else if (req.url.startsWith('/api/continent') && req.method === 'GET') {
+    const continent = req.url.split('/').pop()
+    const filteredData = getDataByPathParams(destinations,'continent',continent)
+    sendJSONResponse(res, 200, filteredData)
 
-    }
+  }
+  else if (req.url.startsWith('/api/country') && req.method === 'GET') {
+    const country = req.url.split('/').pop()
+   const filteredData = getDataByPathParams(destinations, 'country', country)
+    sendJSONResponse(res, 200, filteredData)
 
-    else {
-        res.statusCode = 400
-        res.setHeader('Content-Type', 'application/json')
-        res.end(JSON.stringify({ error: "not found", message: "The requested route does not exist" }));
+  }
 
-    }
+  else {
+    res.statusCode = 400
+    res.setHeader('Content-Type', 'application/json')
+    res.end(JSON.stringify({ error: "not found", message: "The requested route does not exist" }));
+
+  }
 
 })
 
 server.listen(PORT, () => {
-    console.log(`server running on port: ${PORT}`);
+  console.log(`server running on port: ${PORT}`);
 
 })
